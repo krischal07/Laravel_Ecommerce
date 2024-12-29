@@ -188,5 +188,7 @@ class FrontEndController extends Controller
 
             $order_item->save();
         }
+        $request->session()->put('order_id', $order->id);
+        return view('payment');
     }
 }

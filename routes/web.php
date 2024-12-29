@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -19,3 +20,5 @@ Route::post('/remove_from_cart', [FrontEndController::class, 'remove_from_cart']
 Route::post('/edit_quantity', [FrontEndController::class, 'edit_quantity'])->name('edit_quantity');
 Route::get('/checkout', [FrontEndController::class, 'checkout'])->name('checkout');
 Route::post('/place_order', [FrontEndController::class, 'place_order'])->name('place_order');
+Route::get('/payment', [PaymentController::class, 'pay'])->name('payment');
+Route::get('/processPayment', [PaymentController::class, 'processPayment']);
